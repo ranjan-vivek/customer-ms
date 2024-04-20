@@ -14,7 +14,10 @@ import lombok.NoArgsConstructor;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int customer_id;
     private String firstname;
     private String lastname;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Contact contact;
 }

@@ -5,18 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Entity
 @Table(name="address")
-
 public class Address {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer addressId;
+    private int addressId;
     private String street;
-    private String houseNumber;
-    private String zipCode;
+    private String houseNo;
+    private String zipcode;
     private String city;
+    private String state;
 }
