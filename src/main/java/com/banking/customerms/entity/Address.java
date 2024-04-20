@@ -3,21 +3,21 @@ package com.banking.customerms.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name="customer")
-public class Customer {
+@Table(name="address")
+public class Address {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customer_id;
-    private String firstname;
-    private String lastname;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private Contact contact;
+    private int addressId;
+    private String street;
+    private String houseNo;
+    private String zipcode;
+    private String city;
+    private String state;
 }

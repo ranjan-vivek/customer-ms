@@ -3,21 +3,20 @@ package com.banking.customerms.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name="customer")
-public class Customer {
+@Table(name="contact")
+public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customer_id;
-    private String firstname;
-    private String lastname;
-
+    private int contactId;
+    private String phoneNo;
+    private String email;
+    //@JoinColumn is used to canfge the column name of reference
     @OneToOne(cascade = CascadeType.ALL)
-    private Contact contact;
+    private Address address;
 }
